@@ -5,4 +5,4 @@ cd ~/.vim/bundle
 git clone https://github.com/scrooloose/nerdtree.git
 
 cd ~/.vim/bundle
-git clone https://github.com//szw/vim-ctrlspace.git
+git clone https://github.com/szw/vim-ctrlspace.git
