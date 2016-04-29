@@ -1,3 +1,5 @@
+LANG=en_GB.utf-8
+
 alias ll="ls -la"
 
 function ga {
