@@ -17,3 +17,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeQuitOnOpen = 1
 
 set encoding=utf-8
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
