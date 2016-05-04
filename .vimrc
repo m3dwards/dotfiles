@@ -18,3 +18,7 @@ let NERDTreeQuitOnOpen = 1
 
 set encoding=utf-8
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
