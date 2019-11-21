@@ -3,3 +3,11 @@
 !README.md
 
 !.gitignore
+
+!.bash_profile
+!.bashrc
+!.vimrc
+
+!FrontEndDelight.itermcolors
+!SolarizedDark.itermcolors
+!SolarizedLight.itermcolors
