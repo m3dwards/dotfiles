@@ -21,3 +21,8 @@ alias gpr="git pull --rebase"
 function gc {
   git commit -m "$1"
 }
+
+export GOPATH=~/source/gopath
+export PATH=$GOPATH/bin:$PATH
+
+source ~/.xsh
