@@ -8,6 +8,7 @@
 !.xsh
 !.spacemacs
 
+!.doom.d/**
 !.doom.d
 
 !FrontEndDelight.itermcolors
