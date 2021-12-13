@@ -4,11 +4,11 @@
 
 !.gitignore
 
-!.bash_profile
-!.bashrc
 !.vimrc
 !.xsh
 !.spacemacs
+
+!.doom.d
 
 !FrontEndDelight.itermcolors
 !SolarizedDark.itermcolors
