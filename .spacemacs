@@ -62,10 +62,17 @@ This function should only modify configuration layer settings."
      version-control
      terraform
      python
-     javascript
+     prettier
+     (javascript :variables
+                 js2-mode-show-strict-warnings nil  ;; We have standardjs for linting/warnings.
+                 js2-basic-offset 2
+                 js-indent-level 2
+                 javascript-fmt-tool 'prettier)
      react
      docker
      lsp
+     (node :variables node-add-modules-path t)
+     (vue :variables vue-backend 'lsp)
      )
 
    ;; List of additional packages that will be installed without being
@@ -480,7 +487,22 @@ before packages are loaded."
   (use-package evil-text-object-go)
   (add-hook 'go-mode-hook 'evil-text-object-go-add-bindings)
   (add-hook 'python-mode-hook 'evil-text-object-python-add-bindings)
-  )
+  (setq scroll-margin 10)
+  (setq js-indent-level 2)
+
+  (add-hook 'js2-mode-hook
+            (lambda ()
+              (add-hook 'before-save-hook 'prettier-js nil 'make-it-local)))
+  (setq-default
+    ;; web-mode
+    web-mode-markup-indent-offset 2
+    web-mode-css-indent-offset 2
+    web-mode-code-indent-offset 2
+    web-mode-attr-indent-offset 2)
+  (add-hook 'treemacs-mode-hook
+            (defun set-local-scroll-margin ()
+              (setq-local scroll-margin 0)))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
