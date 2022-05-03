@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Source Code Pro" :size 13 :weight 'medium))
+(setq doom-font (font-spec :family "Source Code Pro" :size 14 :weight 'medium))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -40,12 +40,16 @@
   :config
   (super-save-mode +1))
 
+(add-hook 'treemacs-mode-hook
+          (defun set-local-scroll-margin ()
+            (setq-local scroll-margin 0)))
+
 (use-package! evil-motion-trainer
   :init
-  (global-evil-motion-trainer-mode 1)
+  (global-evil-motion-trainer-mode 0)
   :config
   (setq evil-motion-trainer-threshold 6)
-   (emt-add-suggestion 'evil-next-line 'evil-avy-goto-char-timer))
+  (emt-add-suggestion 'evil-next-line 'evil-avy-goto-char-timer))
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -62,3 +66,8 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;; (setq typescript-indent-level 2)
+;;
+;; makes the editorconfig check for flipping jsx indent levels
+(after! editorconfig
+  (add-to-list 'editorconfig-indentation-alist '(typescript-tsx-mode typescript-indent-level)))
