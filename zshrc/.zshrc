@@ -1,7 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=$HOME/.emacs.d/bin:$PATH
+path+=($HOME/bin:/usr/local/bin)
+path+=($HOME/.emacs.d/bin)
+path+=($HOME/go/bin)
+path=("/opt/homebrew/sbin:$PATH" $path)
+path=(/opt/homebrew/bin $path)
+# path=(/opt/homebrew/opt/llvm/bin $path)
+export PATH
+
+SSH_AUTH_SOCK="~/.ssh/agent"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/maxedwards/.oh-my-zsh"
@@ -101,3 +107,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias k="kubectl"
+alias d="docker"
+
+remoteadd() {
+  git remote add $1 https://github.com/$1/$(basename `pwd`)
+  git fetch $1
+}
+
+# autocomplete
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
