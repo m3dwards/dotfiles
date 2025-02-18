@@ -7,4 +7,5 @@ stow fish -t ~/
 nvim is installed as a submodule
 
 To update submodules
-git submodule foreach git pull
+cd nvim/.config/nvim && git reset --hard && cd ../../../
+git submodule update --remote
