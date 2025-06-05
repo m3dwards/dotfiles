@@ -10,3 +10,4 @@ if status is-interactive
 end
 
 alias k kubectl
+direnv hook fish | source
