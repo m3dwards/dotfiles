@@ -1,5 +1,8 @@
 Max's dev machine defaults
 
+git pull --recurse-submodules
+git submodule update --init --recursive
+
 Install using GNU Stow:
 
 stow fish -t ~/
