@@ -12,3 +12,5 @@ end
 
 alias k kubectl
 direnv hook fish | source
+alias cp="copilot --model gpt-5.4-mini -s -p"
+alias cpy="copilot --model gpt-5.4-mini --yolo -s -p"
